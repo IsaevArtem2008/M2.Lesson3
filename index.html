@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашняя работа к занятию 3 (Модуль 2)</title>
+</head>
+<script>
+    while (true) {
+        let oklad = prompt("Введите оклад:");
+        alert(salary(oklad));
+        if(!confirm("Вы хотите повторить расчет?")) {
+            break;
+        }   
+    }
+    // функция расчета заработной платы
+    function salary(oklad) {
+        let result;
+        if (!isNaN(oklad)) {
+            let _oklad = parseInt(oklad);
+            if (_oklad < 100000) {
+                result = _oklad - (_oklad*35/100);
+            } else {
+                result = _oklad - (_oklad*45/100);
+            }
+        } else {
+            return "Некорректный запрос! Введите оклад в целочисленном формате.";
+        }
+        return "Ваша заработная плата: " + result   + " руб."
+    }
+</script>
+<body>
+</body>
+</html>
